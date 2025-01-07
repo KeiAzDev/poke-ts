@@ -1,15 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
-import { getAllPokemon, getPokemon } from './utils/pokemon';
-
-// 個別のポケモンデータ
-interface Pokemon {
-  name: string;
-  sprites: {
-    front_default: string;
-  };
-  // 必要に応じて他のプロパティを追加
-}
+import { getAllPokemon, getPokemon, Pokemon } from './utils/pokemon';
+import Card from './components/card/Card';
 
 function App() {
   const initialURL = 'https://pokeapi.co/api/v2/pokemon';
@@ -41,7 +33,11 @@ function App() {
       {loading ? (
         <h1>ロード中・・・</h1>
       ) : (<>
-      <h1>ポケモンデータを取得しました</h1>
+      <div className="pokemonCardContainer">
+        {pokemonData.map((pokemon: Pokemon, i: number) => {
+          return <Card key={i} pokemon={pokemon} />
+        })}
+      </div>
       </>)}
     </div>
   )

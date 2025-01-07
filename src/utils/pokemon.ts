@@ -4,11 +4,22 @@ interface PokemonListResponse {
 }
 
 // 個別のポケモンデータ
-interface Pokemon {
+export interface Pokemon {
   name: string;
   sprites: {
     front_default: string;
   };
+  types: { type: { name: string } }[]; // types の型を追加
+  weight: number;
+  height: number;
+  abilities: {
+    ability: {
+      name: string;
+      url: string;
+    };
+    is_hidden: boolean;
+    slot: number;
+  }[];
   // 必要に応じて他のプロパティを追加
 }
 
