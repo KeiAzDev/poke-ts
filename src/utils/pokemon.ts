@@ -1,6 +1,8 @@
 // PokemonリストのAPIレスポンス
 interface PokemonListResponse {
   results: { name: string; url: string }[];
+  next: string | null; // 次のページのURL
+  previous: string | null; // 前のページのURL (必要であれば)
 }
 
 // 個別のポケモンデータ

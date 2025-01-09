@@ -12,3 +12,26 @@
   margin-top: 20px;
 }
 
+.btn {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn button {
+  padding: 13px 32px;
+  background-color: #a05a68;
+  border: none;
+  box-shadow: 13px 12px 19px 3px #777777;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.btn button:hover {
+  transform: translateY(5px);
+  box-shadow: none;
+}
